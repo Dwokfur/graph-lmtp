@@ -1,0 +1,9 @@
+# Run as the local mailbox owner. Use absolute paths throughout.
+state_dir = "/home/alice/.local/state/graph-lmtp"
+token_command = ["/usr/bin/ortie", "-c", "/home/alice/.config/ortie/config.toml", "token", "show", "-a", "work"]
+lmtp_socket = "/run/dovecot/lmtp"
+# Use the exact envelope recipient accepted by your working Dovecot LMTP setup.
+recipient = "alice@example.net"
+
+timeout = 120
+max_message_bytes = 104857600
