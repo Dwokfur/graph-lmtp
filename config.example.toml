@@ -1,9 +1,9 @@
-# Run as the local mailbox owner. Use absolute paths throughout.
-state_dir = "/home/alice/.local/state/graph-lmtp"
-token_command = ["/usr/bin/ortie", "-c", "/home/alice/.config/ortie/config.toml", "token", "show", "-a", "work"]
-lmtp_socket = "/run/dovecot/lmtp"
-# Use the exact envelope recipient accepted by your working Dovecot LMTP setup.
-recipient = "alice@example.net"
-
+state_dir = "/home/alice/.local/state/graph-maildir"
+himalaya = "/usr/bin/himalaya"
+himalaya_config = "/home/alice/.config/himalaya/config.toml"
+source_account = "o365"
+local_account = "local_backup"
 timeout = 120
-max_message_bytes = 104857600
+
+# Optional. Use the Dovecot mailbox name, not the filesystem directory.
+# index_command = ["/usr/bin/doveadm", "index", "-u", "alice", "Work"]
